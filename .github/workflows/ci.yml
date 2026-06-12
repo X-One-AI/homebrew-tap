@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-formulae:
+    runs-on: macos-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6.0.3
+
+      - name: Update Homebrew
+        run: brew update
+
+      - name: Audit formula
+        run: brew audit --strict --online Formula/mcp-audit.rb
+
+      - name: Install formula from source
+        run: brew install --build-from-source Formula/mcp-audit.rb
+
+      - name: Test formula
+        run: brew test mcp-audit
