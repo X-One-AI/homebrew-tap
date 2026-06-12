@@ -15,11 +15,14 @@ jobs:
       - name: Update Homebrew
         run: brew update
 
+      - name: Tap workspace
+        run: brew tap x-one-ai/tap "$GITHUB_WORKSPACE"
+
       - name: Audit formula
-        run: brew audit --strict --online Formula/mcp-audit.rb
+        run: brew audit --strict --online x-one-ai/tap/mcp-audit
 
       - name: Install formula from source
-        run: brew install --build-from-source Formula/mcp-audit.rb
+        run: brew install --build-from-source x-one-ai/tap/mcp-audit
 
       - name: Test formula
-        run: brew test mcp-audit
+        run: brew test x-one-ai/tap/mcp-audit
