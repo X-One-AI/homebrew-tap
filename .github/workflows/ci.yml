@@ -18,6 +18,9 @@ jobs:
       - name: Tap workspace
         run: brew tap x-one-ai/tap "$GITHUB_WORKSPACE"
 
+      - name: Trust formula
+        run: brew trust --formula x-one-ai/tap/mcp-audit
+
       - name: Audit formula
         run: brew audit --strict --online x-one-ai/tap/mcp-audit
 

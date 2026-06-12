@@ -7,6 +7,8 @@ Official Homebrew tap for X-One command-line tools.
 ## Install
 
 ```bash
+brew tap x-one-ai/tap
+brew trust --formula x-one-ai/tap/mcp-audit
 brew install x-one-ai/tap/mcp-audit
 mcp-audit --version
 ```
