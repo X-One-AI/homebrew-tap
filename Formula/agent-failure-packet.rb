@@ -3,8 +3,8 @@ class AgentFailurePacket < Formula
 
   desc "Create redacted, shareable debug packets from failed AI agent runs"
   homepage "https://github.com/X-One-AI/agent-failure-packet"
-  url "https://github.com/X-One-AI/agent-failure-packet/releases/download/v0.4.0/xone_agent_failure_packet-0.4.0.tar.gz"
-  sha256 "533892ee6760e53d6f6f7efd5146dc8005f35dce1b0dc93d2ec32b8506e9e0bf"
+  url "https://github.com/X-One-AI/agent-failure-packet/releases/download/v0.4.1/xone_agent_failure_packet-0.4.1.tar.gz"
+  sha256 "3bd34931d66039c51a6f5e7040ab7e724ec619fec0173c3cf6c9f99ada97ef68"
   license "MIT"
 
   depends_on "python@3.13"
@@ -19,7 +19,7 @@ class AgentFailurePacket < Formula
   end
 
   test do
-    assert_match "agent-failure-packet 0.4.0", shell_output("#{bin}/agent-failure-packet --version")
+    assert_match "agent-failure-packet 0.4.1", shell_output("#{bin}/agent-failure-packet --version")
     system bin/"agent-failure-packet", "init", "--profile", "issue", "--output", testpath/"agent-failure-packet.yml"
     assert_path_exists testpath/"agent-failure-packet.yml"
   end

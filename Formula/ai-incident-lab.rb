@@ -3,8 +3,8 @@ class AiIncidentLab < Formula
 
   desc "Safe local incident simulations for AI agents, MCP tools, and generated code"
   homepage "https://github.com/X-One-AI/ai-incident-lab"
-  url "https://github.com/X-One-AI/ai-incident-lab/releases/download/v0.2.0/xone_ai_incident_lab-0.2.0.tar.gz"
-  sha256 "00b8b7fcfd239e4833b78ff29a90d3d978bacdc57861dece9c51fb07a5989f98"
+  url "https://github.com/X-One-AI/ai-incident-lab/releases/download/v0.2.1/xone_ai_incident_lab-0.2.1.tar.gz"
+  sha256 "6b5cc75e94d91e11c5a85583aef47cb7bea2de7f710faf44de98f09cb76b6adb"
   license "MIT"
 
   depends_on "python@3.13"
@@ -19,7 +19,7 @@ class AiIncidentLab < Formula
   end
 
   test do
-    assert_match "ai-incident-lab 0.2.0", shell_output("#{bin}/ai-incident-lab --version")
+    assert_match "ai-incident-lab 0.2.1", shell_output("#{bin}/ai-incident-lab --version")
     system bin/"ai-incident-lab", "init", "--output", testpath/"scenarios"
     system bin/"ai-incident-lab", "validate", "--scenarios", testpath/"scenarios"
   end
