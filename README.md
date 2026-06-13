@@ -18,17 +18,29 @@ mcp-audit --version
 | Formula | Description |
 | --- | --- |
 | `mcp-audit` | Scan MCP and AI agent configs for risky permissions, secrets, unsafe commands, and CI safety gaps. |
+| `agent-pr-evidence` | Generate reviewable safety evidence for AI-agent-generated pull requests. |
+| `agent-failure-packet` | Create redacted, shareable debug packets from failed AI agent runs. |
+| `mcp-risk-index` | Validate and render an evidence-backed MCP server risk signal catalog. |
+| `ai-incident-lab` | Run safe local incident scenario packs for AI agent workflows. |
 
 ## Verification
 
-The tap CI installs formulae from source and runs formula tests. For `mcp-audit`, the test verifies:
+The tap CI installs formulae from source and runs formula tests. Formula tests verify CLI entrypoints and the shortest safe workflow for tools with an `init` command:
 
 ```bash
 mcp-audit --version
 mcp-audit discover
+agent-pr-evidence --version
+agent-failure-packet init
+mcp-risk-index init && mcp-risk-index validate
+ai-incident-lab init && ai-incident-lab validate
 ```
 
 Project docs:
 
 - [mcp-audit README](https://github.com/X-One-AI/mcp-audit#readme)
 - [mcp-audit Chinese README](https://github.com/X-One-AI/mcp-audit/blob/main/README.zh-CN.md)
+- [agent-pr-evidence README](https://github.com/X-One-AI/agent-pr-evidence#readme)
+- [agent-failure-packet README](https://github.com/X-One-AI/agent-failure-packet#readme)
+- [mcp-risk-index README](https://github.com/X-One-AI/mcp-risk-index#readme)
+- [ai-incident-lab README](https://github.com/X-One-AI/ai-incident-lab#readme)
