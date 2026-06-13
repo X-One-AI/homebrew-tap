@@ -22,10 +22,25 @@ jobs:
         run: brew trust x-one-ai/tap
 
       - name: Audit formula
-        run: brew audit --strict --online x-one-ai/tap/mcp-audit
+        run: |
+          brew audit --strict --online x-one-ai/tap/mcp-audit
+          brew audit --strict --online x-one-ai/tap/agent-pr-evidence
+          brew audit --strict --online x-one-ai/tap/agent-failure-packet
+          brew audit --strict --online x-one-ai/tap/mcp-risk-index
+          brew audit --strict --online x-one-ai/tap/ai-incident-lab
 
       - name: Install formula from source
-        run: brew install --build-from-source x-one-ai/tap/mcp-audit
+        run: |
+          brew install --build-from-source x-one-ai/tap/mcp-audit
+          brew install --build-from-source x-one-ai/tap/agent-pr-evidence
+          brew install --build-from-source x-one-ai/tap/agent-failure-packet
+          brew install --build-from-source x-one-ai/tap/mcp-risk-index
+          brew install --build-from-source x-one-ai/tap/ai-incident-lab
 
       - name: Test formula
-        run: brew test x-one-ai/tap/mcp-audit
+        run: |
+          brew test x-one-ai/tap/mcp-audit
+          brew test x-one-ai/tap/agent-pr-evidence
+          brew test x-one-ai/tap/agent-failure-packet
+          brew test x-one-ai/tap/mcp-risk-index
+          brew test x-one-ai/tap/ai-incident-lab
