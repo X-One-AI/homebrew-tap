@@ -3,8 +3,8 @@ class McpRiskIndex < Formula
 
   desc "Evidence-backed MCP server risk signal catalog and local CLI"
   homepage "https://github.com/X-One-AI/mcp-risk-index"
-  url "https://github.com/X-One-AI/mcp-risk-index/releases/download/v0.3.0/xone_mcp_risk_index-0.3.0.tar.gz"
-  sha256 "dbb43b86d972c80d1b936448b26d7d49e8755ec75b929101488fd7419eb91de6"
+  url "https://github.com/X-One-AI/mcp-risk-index/releases/download/v0.3.1/xone_mcp_risk_index-0.3.1.tar.gz"
+  sha256 "98c82c7b1b7ccce853b7f80b9fdace636c002f1867fa58b453291951255deb96"
   license "MIT"
 
   depends_on "python@3.13"
@@ -19,7 +19,7 @@ class McpRiskIndex < Formula
   end
 
   test do
-    assert_match "mcp-risk-index 0.3.0", shell_output("#{bin}/mcp-risk-index --version")
+    assert_match "mcp-risk-index 0.3.1", shell_output("#{bin}/mcp-risk-index --version")
     system bin/"mcp-risk-index", "init", "--output", testpath/"catalog.yml"
     system bin/"mcp-risk-index", "validate", "--catalog", testpath/"catalog.yml", "--strict"
   end
