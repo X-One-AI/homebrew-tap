@@ -11,6 +11,9 @@ brew tap x-one-ai/tap
 brew trust --formula x-one-ai/tap/mcp-audit
 brew install x-one-ai/tap/mcp-audit
 mcp-audit --version
+
+brew install x-one-ai/tap/xone-cli
+xone --version
 ```
 
 ## Formulae
@@ -22,6 +25,7 @@ mcp-audit --version
 | `agent-failure-packet` | 把失败的 AI agent run 生成脱敏、可分享的调试包。 |
 | `mcp-risk-index` | 校验并渲染有证据支撑的 MCP server 风险信号 catalog。 |
 | `ai-incident-lab` | 运行安全本地 AI agent incident scenario packs。 |
+| `xone-cli` | X-One Agent Evidence Loop 的统一本地入口。 |
 
 ## 验证
 
@@ -34,6 +38,8 @@ agent-pr-evidence --version
 agent-failure-packet init
 mcp-risk-index init && mcp-risk-index validate
 ai-incident-lab init && ai-incident-lab validate
+xone --version
+xone doctor --json
 ```
 
 项目文档：
@@ -44,3 +50,5 @@ ai-incident-lab init && ai-incident-lab validate
 - [agent-failure-packet README](https://github.com/X-One-AI/agent-failure-packet#readme)
 - [mcp-risk-index README](https://github.com/X-One-AI/mcp-risk-index#readme)
 - [ai-incident-lab README](https://github.com/X-One-AI/ai-incident-lab#readme)
+- [xone-cli README](https://github.com/X-One-AI/xone-cli#readme)
+- [xone-cli 中文 README](https://github.com/X-One-AI/xone-cli/blob/main/README.zh-CN.md)
