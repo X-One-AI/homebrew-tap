@@ -28,6 +28,7 @@ jobs:
           brew audit --strict --online x-one-ai/tap/agent-failure-packet
           brew audit --strict --online x-one-ai/tap/mcp-risk-index
           brew audit --strict --online x-one-ai/tap/ai-incident-lab
+          brew audit --strict --online x-one-ai/tap/xone-cli
 
       - name: Install formula from source
         run: |
@@ -36,6 +37,7 @@ jobs:
           brew install --build-from-source x-one-ai/tap/agent-failure-packet
           brew install --build-from-source x-one-ai/tap/mcp-risk-index
           brew install --build-from-source x-one-ai/tap/ai-incident-lab
+          brew install --build-from-source x-one-ai/tap/xone-cli
 
       - name: Test formula
         run: |
@@ -44,3 +46,4 @@ jobs:
           brew test x-one-ai/tap/agent-failure-packet
           brew test x-one-ai/tap/mcp-risk-index
           brew test x-one-ai/tap/ai-incident-lab
+          brew test x-one-ai/tap/xone-cli
