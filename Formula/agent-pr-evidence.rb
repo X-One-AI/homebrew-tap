@@ -3,8 +3,8 @@ class AgentPrEvidence < Formula
 
   desc "Generate reviewable safety evidence for AI-agent-generated pull requests"
   homepage "https://github.com/X-One-AI/agent-pr-evidence"
-  url "https://github.com/X-One-AI/agent-pr-evidence/releases/download/v0.4.1/xone_agent_pr_evidence-0.4.1.tar.gz"
-  sha256 "a87c6b41c342be575ce824dcf66aee586026ca0dd1f2254fbb80f86be8f18ed0"
+  url "https://github.com/X-One-AI/agent-pr-evidence/releases/download/v0.4.2/xone_agent_pr_evidence-0.4.2.tar.gz"
+  sha256 "73051917b1a49a5bf40a069b19fe5af587aacf0716145157761b31dba29c77ae"
   license "MIT"
 
   depends_on "python@3.13"
@@ -19,6 +19,6 @@ class AgentPrEvidence < Formula
   end
 
   test do
-    assert_match "agent-pr-evidence 0.4.1", shell_output("#{bin}/agent-pr-evidence --version")
+    assert_match "agent-pr-evidence 0.4.2", shell_output("#{bin}/agent-pr-evidence --version")
   end
 end
